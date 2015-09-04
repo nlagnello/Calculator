@@ -7,6 +7,7 @@ package Lab2;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,9 +18,10 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Nick
  */
-@WebServlet(name = "Controller2", urlPatterns = {"/Controller2"})
+@WebServlet(name = "Controller2", urlPatterns = {"/controller2"})
 public class Controller2 extends HttpServlet {
 
+    private static final String DESTINATION = "lab2.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -32,18 +34,21 @@ public class Controller2 extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Controller2</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Controller2 at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        
+        String length = request.getParameter("length");
+        String width = request.getParameter("width");
+        
+        request.setAttribute("length", length);
+        request.setAttribute("width", width);
+        
+        CalculateService2 cs = new CalculateService2();
+        
+        String area = cs.calculateAreaOfRectangle(length, width);
+        
+        request.setAttribute("area", area);
+        
+        RequestDispatcher view = request.getRequestDispatcher(DESTINATION);
+        view.forward(request,response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

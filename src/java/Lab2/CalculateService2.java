@@ -11,4 +11,15 @@ package Lab2;
  */
 public class CalculateService2 {
     
+    public String calculateAreaOfRectangle(String sWidth, String sLength){
+        
+        
+        double length = Double.parseDouble(sLength);
+        double width = Double.parseDouble(sWidth);
+        
+        double area = length * width;
+        
+        
+        return Double.toString(area) ;
+    }
 }

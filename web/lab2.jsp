@@ -9,9 +9,32 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Calculator</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Calculator - Lab 2</h1>
+        
+        <form method="Post" action="controller2">
+            <label>Length:</label>
+            <input type="text" name="length" required="true"><br>
+            <label>Width:</label>
+            <input type="text" name="width" required="true"><br><br>
+            <input type="Submit" value="Submit">
+            
+            
+            
+        </form>
+        <form method="Get">
+            <%
+                Object obj = request.getAttribute("area");
+                
+                String area = "";
+                if(obj != null){
+                    area = (String) obj;
+                }
+                
+            %>
+            <label>The area is : <%=area %></label>
+        </form>
     </body>
 </html>

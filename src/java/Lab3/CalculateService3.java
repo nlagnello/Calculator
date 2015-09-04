@@ -22,4 +22,22 @@ public class CalculateService3 {
         
         return Double.toString(area) ;
     }
+    
+    public String calculateAreaOfCircle(String sRadius){
+        double radius = Double.parseDouble(sRadius);
+        
+        double area = Math.PI * radius * radius;
+        
+        return Double.toString(area);
+    }
+    
+    public String calculateAreaOfTriangle(String sWidth, String sLength){
+        
+        double length = Double.parseDouble(sLength);
+        double width = Double.parseDouble(sWidth);
+        
+        double area = (length * width)/2;
+        
+        return Double.toString(area);
+    }
 }

@@ -16,11 +16,11 @@
         
         <form method="Post" action="controller2">
             <label>Length:</label>
-            <input type="text" name="length" required="true"><br>
+            <input type="text" name="length" required="true"><br><br>
             <label>Width:</label>
             <input type="text" name="width" required="true"><br><br>
             <input type="Submit" value="Submit">
-            
+            <br><br>
             
             
         </form>

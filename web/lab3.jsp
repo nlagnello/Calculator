@@ -13,6 +13,19 @@
     </head>
     <body
         <h1>Calculator - Lab 3</h1>
+        
+        <form method="Get">
+            <%
+                Object obj = request.getAttribute("area");
+                
+                String area = "";
+                if(obj != null){
+                    area = (String) obj;
+                }
+                
+            %>
+            <label>The area is : <%=area %></label>
+        </form>
         <form id="rectangle" action="controller3">
             <label>Length:</label>
             <input type="text" name="rLength" ><br><br>
@@ -25,7 +38,7 @@
         </form>
         <form id="circle" action="controller3">
             <label>Radius: </label>
-            <input type="text" name="length" ><br><br>
+            <input type="text" name="radius" ><br><br>
             <input type="text" name="type" value="circle" hidden="true">
             <input type="Submit" value="Submit">
             <br><br>

@@ -7,6 +7,7 @@ package Lab3;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "Controller3", urlPatterns = {"/controller3"})
 public class Controller3 extends HttpServlet {
 
+    private static final String DESTINATION = "lab3.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -32,18 +34,38 @@ public class Controller3 extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Controller3</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Controller3 at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        
+        String type = request.getParameter("type");
+        CalculateService3 cs = new CalculateService3();
+        String area = "";
+        if(type.equals("rectangle")){
+            String length = request.getParameter("rLength");
+            String width = request.getParameter("rWidth");
+        
+            request.setAttribute("length", length);
+            request.setAttribute("width", width);
+            area = cs.calculateAreaOfRectangle(length, width);
         }
+        else if(type.equals("circle")){
+            String radius = request.getParameter("radius");
+            
+            request.setAttribute("radius", radius);
+            area = cs.calculateAreaOfCircle(radius);
+        }
+        else if(type.equals("triangle")){
+            String length = request.getParameter("tLength");
+            String height = request.getParameter("tHeight");
+        
+            request.setAttribute("length", length);
+            request.setAttribute("width", height);
+            area = cs.calculateAreaOfTriangle(length, height);
+        }
+        
+        
+        request.setAttribute("area", area);
+        
+        RequestDispatcher view = request.getRequestDispatcher(DESTINATION);
+        view.forward(request,response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

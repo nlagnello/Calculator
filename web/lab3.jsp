@@ -27,6 +27,7 @@
             <label>The area is : <%=area %></label>
         </form>
         <form id="rectangle" action="controller3">
+            <h2>Area of a Rectangle</h2>
             <label>Length:</label>
             <input type="text" name="rLength" ><br><br>
             <label>Width:</label>
@@ -37,6 +38,7 @@
 
         </form>
         <form id="circle" action="controller3">
+            <h2>Area of a Circle</h2>
             <label>Radius: </label>
             <input type="text" name="radius" ><br><br>
             <input type="text" name="type" value="circle" hidden="true">
@@ -45,6 +47,7 @@
 
         </form>
         <form id="triangle" action="controller3">
+            <h2>Area of a Triangle</h2>
             <label>Length:</label>
             <input type="text" name="tLength" ><br><br>
             <label>Height</label>

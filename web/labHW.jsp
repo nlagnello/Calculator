@@ -11,7 +11,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body
+    <body>
+        <a href="index.html">Back to Index</a><br><br>
         <h1>Calculator - Homework</h1>
         
         <form method="Get">

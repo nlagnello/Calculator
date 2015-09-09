@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body
+        <a href="index.html">Back to Index</a><br><br>
         <h1>Calculator - Lab 3</h1>
         
         <form method="Get">

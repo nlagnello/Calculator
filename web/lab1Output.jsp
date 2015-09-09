@@ -12,6 +12,7 @@
         <title>Calculations</title>
     </head>
     <body>
+        <a href="index.html">Back to Index</a><br><br>
         <%
             Object objName = request.getAttribute("area");
             String area = "";

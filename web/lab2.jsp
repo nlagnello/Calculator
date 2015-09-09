@@ -12,6 +12,7 @@
         <title>Calculator</title>
     </head>
     <body>
+        <a href="index.html">Back to Index</a><br><br>
         <h1>Calculator - Lab 2</h1>
         
         <form method="Post" action="controller2">

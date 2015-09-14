@@ -38,6 +38,7 @@ public class Controller4 extends HttpServlet {
         String type = request.getParameter("type");
         CalculateService4 cs = new CalculateService4();
         double area = 0;
+        System.out.println(type);
         if(type.equals("rectangle")){
             String length = request.getParameter("rLength");
             String width = request.getParameter("rWidth");
@@ -45,23 +46,23 @@ public class Controller4 extends HttpServlet {
             request.setAttribute("length", length);
             request.setAttribute("width", width);
             area = cs.calculateAreaOfRectangle(length, width);
-            request.setAttribute("rectArea", area);
+            request.setAttribute("rectArea", Double.toString(area));
         }
         else if(type.equals("circle")){
             String radius = request.getParameter("radius");
             
             request.setAttribute("radius", radius);
             area = cs.calculateAreaOfCircle(radius);
-            request.setAttribute("cirArea", area);
+            request.setAttribute("cirArea", Double.toString(area));
         }
         else if(type.equals("triangle")){
             String length = request.getParameter("tLength");
             String height = request.getParameter("tHeight");
         
             request.setAttribute("length", length);
-            request.setAttribute("width", height);
+            request.setAttribute("height", height);
             area = cs.calculateAreaOfTriangle(length, height);
-            request.setAttribute("triArea", area);
+            request.setAttribute("triArea", Double.toString(area));
         }
         
         

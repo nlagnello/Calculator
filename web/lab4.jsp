@@ -37,7 +37,7 @@
                 }
                 
             %>
-            <label>The area is : <%=rectArea %></label>
+            <label>The area of the rectangle is : <%=rectArea %></label>
         </form>
         <form id="circle" action="controller4">
             <h2>Area of a Circle</h2>
@@ -58,7 +58,7 @@
                 }
                 
             %>
-            <label>The area is : <%=cirArea %></label>
+            <label>The area of the circle is : <%=cirArea %></label>
         </form>
         <form id="triangle" action="controller4">
             <h2>Area of a Triangle</h2>
@@ -76,7 +76,7 @@
                 Object tri = request.getAttribute("triArea");
                 
                 String triArea = "";
-                if(cir != null){
+                if(tri != null){
                     triArea = (String) tri;
                 }
                 

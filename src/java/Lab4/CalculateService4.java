@@ -31,12 +31,12 @@ public class CalculateService4 {
         return area;
     }
     
-    public double calculateAreaOfTriangle(String sWidth, String sLength){
+    public double calculateAreaOfTriangle(String sHeight, String sLength){
         
         double length = Double.parseDouble(sLength);
-        double width = Double.parseDouble(sWidth);
+        double height = Double.parseDouble(sHeight);
         
-        double area = (length * width)/2;
+        double area = (length * height)/2;
         
         return area;
     }

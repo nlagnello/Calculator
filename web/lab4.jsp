@@ -58,39 +58,15 @@
 
         </form>
         <form class="col-md-4"  id="rectangleArea" method="Get">
-            <%
-                Object rect = request.getAttribute("rectArea");
-                
-                String rectArea = "";
-                if(rect != null){
-                    rectArea = (String) rect;
-                }
-                
-            %>
+            
             <c:out value="The area of the rectangle is : ${rectArea}"/>
         </form>
         <form class="col-md-4"  id="circleArea" method="Get">
-            <%
-                Object cir = request.getAttribute("cirArea");
-                
-                String cirArea = "";
-                if(cir != null){
-                    cirArea = (String) cir;
-                }
-                
-            %>
+            
             <c:out value="The area of the circle is : ${cirArea}"/>
         </form>
         <form class="col-md-4"  id="triangleArea" method="Get">
-            <%
-                Object tri = request.getAttribute("triArea");
-                
-                String triArea = "";
-                if(tri != null){
-                    triArea = (String) tri;
-                }
-                
-            %>
+            
             <c:out value="The area of the triangle is : ${triArea}"/>
         </form>
         

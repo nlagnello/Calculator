@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : lab4
     Created on : Sep 4, 2015, 11:57:09 AM
     Author     : Nick
@@ -16,7 +16,7 @@
         <h1>Calculator - Lab 4</h1>
         
         
-        <form id="rectangle" action="controller3">
+        <form id="rectangle" action="controller4">
             <h2>Area of a Rectangle</h2>
             <label>Length:</label>
             <input type="text" name="rLength" ><br><br>
@@ -29,7 +29,7 @@
         </form>
         <form id="rectangleArea" method="Get">
             <%
-                Object rect = request.getAttribute("area");
+                Object rect = request.getAttribute("rectArea");
                 
                 String rectArea = "";
                 if(rect != null){
@@ -37,9 +37,9 @@
                 }
                 
             %>
-            <label>The area is : <%=area %></label>
+            <label>The area is : <%=rectArea %></label>
         </form>
-        <form id="circle" action="controller3">
+        <form id="circle" action="controller4">
             <h2>Area of a Circle</h2>
             <label>Radius: </label>
             <input type="text" name="radius" ><br><br>
@@ -50,7 +50,7 @@
         </form>
         <form id="circleArea" method="Get">
             <%
-                Object cir = request.getAttribute("area");
+                Object cir = request.getAttribute("cirArea");
                 
                 String cirArea = "";
                 if(cir != null){
@@ -58,9 +58,9 @@
                 }
                 
             %>
-            <label>The area is : <%=area %></label>
+            <label>The area is : <%=cirArea %></label>
         </form>
-        <form id="triangle" action="controller3">
+        <form id="triangle" action="controller4">
             <h2>Area of a Triangle</h2>
             <label>Length:</label>
             <input type="text" name="tLength" ><br><br>
@@ -73,7 +73,7 @@
         </form>
         <form id="triangleArea" method="Get">
             <%
-                Object tri = request.getAttribute("area");
+                Object tri = request.getAttribute("triArea");
                 
                 String triArea = "";
                 if(cir != null){
@@ -81,7 +81,7 @@
                 }
                 
             %>
-            <label>The area of the triangle is : <%=area %></label>
+            <label>The area of the triangle is : <%=triArea %></label>
         </form>
     </body>
 </html>

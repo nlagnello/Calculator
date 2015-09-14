@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Nick
  */
-@WebServlet(name = "Controller4", urlPatterns = {"/Controller4"})
+@WebServlet(name = "Controller4", urlPatterns = {"/controller4"})
 public class Controller4 extends HttpServlet {
 
     private static final String DESTINATION = "lab4.jsp";
@@ -37,7 +37,7 @@ public class Controller4 extends HttpServlet {
         
         String type = request.getParameter("type");
         CalculateService4 cs = new CalculateService4();
-        String area = "";
+        double area = 0;
         if(type.equals("rectangle")){
             String length = request.getParameter("rLength");
             String width = request.getParameter("rWidth");
@@ -45,12 +45,14 @@ public class Controller4 extends HttpServlet {
             request.setAttribute("length", length);
             request.setAttribute("width", width);
             area = cs.calculateAreaOfRectangle(length, width);
+            request.setAttribute("rectArea", area);
         }
         else if(type.equals("circle")){
             String radius = request.getParameter("radius");
             
             request.setAttribute("radius", radius);
             area = cs.calculateAreaOfCircle(radius);
+            request.setAttribute("cirArea", area);
         }
         else if(type.equals("triangle")){
             String length = request.getParameter("tLength");
@@ -59,10 +61,11 @@ public class Controller4 extends HttpServlet {
             request.setAttribute("length", length);
             request.setAttribute("width", height);
             area = cs.calculateAreaOfTriangle(length, height);
+            request.setAttribute("triArea", area);
         }
         
         
-        request.setAttribute("area", area);
+        
         
         RequestDispatcher view = request.getRequestDispatcher(DESTINATION);
         view.forward(request,response);

@@ -4,6 +4,7 @@
     Author     : Nick
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -66,7 +67,7 @@
                 }
                 
             %>
-            <label>The area of the rectangle is : <%=rectArea %></label>
+            <c:out value="The area of the rectangle is : ${rectArea}"/>
         </form>
         <form class="col-md-4"  id="circleArea" method="Get">
             <%
@@ -78,7 +79,7 @@
                 }
                 
             %>
-            <label>The area of the circle is : <%=cirArea %></label>
+            <c:out value="The area of the circle is : ${cirArea}"/>
         </form>
         <form class="col-md-4"  id="triangleArea" method="Get">
             <%
@@ -90,7 +91,7 @@
                 }
                 
             %>
-            <label>The area of the triangle is : <%=triArea %></label>
+            <c:out value="The area of the triangle is : ${triArea}"/>
         </form>
         
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
